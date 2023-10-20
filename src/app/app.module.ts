@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { CommunityComponent } from './components/community/community.component';
-import { AboutComponent } from './components/about/about.component';
+import { CommunityComponent } from './modules/user/components/community/community.component';
+import { AboutComponent } from './modules/user/components/about/about.component';
 
 @NgModule({
   declarations: [
