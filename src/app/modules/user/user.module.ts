@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { UserRoutingModule } from './user-routing.module';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,7 +24,8 @@ import { RecipeCardComponent } from './components/recipe-card/recipe-card.compon
   imports: [
     CommonModule,
     UserRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }
