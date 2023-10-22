@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -9,6 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddRecipeModalComponent {
   constructor(public homeService: HomeService) {}
+
+  @Output() newRecipe = new EventEmitter();
 
   closeModal() {
     this.homeService.closeModal();
@@ -22,7 +24,12 @@ export class AddRecipeModalComponent {
   });
 
   addRecipe() {
-    console.log(this.add_recipe_form.value);
+    const newRecipe: any = {
+      title: this.add_recipe_form.get('recipe_name')?.value,
+      description: this.add_recipe_form.get('recipe_ingridients')?.value,
+    };
+    console.log(newRecipe);
+    this.newRecipe.emit(newRecipe);
   }
 
   get recipe_name() {

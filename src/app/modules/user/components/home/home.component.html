@@ -33,7 +33,7 @@
     </section>
 
     <div *ngIf="homeService.modalOpen | async">
-        <app-add-recipe-modal></app-add-recipe-modal>
+        <app-add-recipe-modal (newRecipe)="onRecipeAdded($event)"></app-add-recipe-modal>
     </div>
 </div>
 
