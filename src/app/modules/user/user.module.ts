@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserContainerComponent } from './components/user-container/user-container.component';
 import { AddRecipeModalComponent } from './components/add-recipe-modal/add-recipe-modal.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
+import { RecipeInfoModalComponent } from './components/recipe-info-modal/recipe-info-modal.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RecipeCardComponent } from './components/recipe-card/recipe-card.compon
     HomeComponent,
     UserContainerComponent,
     AddRecipeModalComponent,
-    RecipeCardComponent
+    RecipeCardComponent,
+    RecipeInfoModalComponent
   ],
   imports: [
     CommonModule,
