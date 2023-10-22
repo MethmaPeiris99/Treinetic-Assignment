@@ -28,7 +28,7 @@ export class AuthService {
 
   login({ username, password }: any): Observable<any>{
     if (username === 'methma' && password === 'methma123') {
-      this.setToken('rgoegkeekn23428kfns!knk');
+      this.setToken('rgoegkeekn23428kfns!knk'); // Set a random token and store it in the local storage
       return of({name:'Methma Peiris', username:'methma'});
     }
     return throwError(new Error('Failed to Login'))
