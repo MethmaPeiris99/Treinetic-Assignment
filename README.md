@@ -27,7 +27,7 @@ Open [http://localhost:4200/login](http://localhost:4200/login) to view it in yo
 - [x] User can add a new recipe using the add recipe form and the newly added recipe will display in the home page
 - [x] Parent-to-Child data communication was implemented between home and recipe-card components
 - [x] Child-to-Parent data communication was implemented between add-recipe-modal and home components
-- [x] [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts) jsonplaceholder API is used to display as recipe data in the home page
+- [x] [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts) and [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments) jsonplaceholder APIs are used to display recipe data in the home page and recipe info modal
 - [x] Lazy loading modules advanced feature in Angular was implemented 
 - [x] Unit test was written to check whether the data retrived from the API is empty or not
 - [x] Implemented responsiveness across all the UI elements
