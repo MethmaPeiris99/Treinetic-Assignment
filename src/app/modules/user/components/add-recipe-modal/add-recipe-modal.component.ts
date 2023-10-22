@@ -26,7 +26,7 @@ export class AddRecipeModalComponent {
   addRecipe() {
     const newRecipe: any = {
       title: this.add_recipe_form.get('recipe_name')?.value,
-      description: this.add_recipe_form.get('recipe_ingridients')?.value,
+      body: this.add_recipe_form.get('recipe_ingridients')?.value,
     };
     console.log(newRecipe);
     this.newRecipe.emit(newRecipe);
