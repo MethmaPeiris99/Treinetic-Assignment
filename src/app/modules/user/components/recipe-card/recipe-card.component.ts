@@ -19,8 +19,8 @@ export class RecipeCardComponent {
   }
 
   sendRecipeInfo() {
+    this.openRecipeModal(this.recipeIndex);
     this.recipeInfoClicked.emit(this.recipeInfo);
     console.log(this.recipeInfo)
-    this.openRecipeModal;
   }
 }

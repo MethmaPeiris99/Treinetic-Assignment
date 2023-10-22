@@ -10,7 +10,7 @@
             </h1>
         </div>
         <div class="flex text-[#93B7C5] font-semibold mt-2 cursor-pointer hover:text-black hover:duration-500"
-            (click)="sendRecipeInfo()">
+            (click)="openRecipeModal(recipeIndex)">
             <p class="font-secondary_font italic">See More</p>
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -23,6 +23,6 @@
     </div>
 </div>
 
-<div *ngIf="homeService.openRecipeModal(recipeIndex)">
-    <app-recipe-info-modal [recipeInfo]="recipeInfo"></app-recipe-info-modal>
+<div *ngIf="homeService.isModalOpen[recipeIndex]">
+    <app-recipe-info-modal [recipeInfo]="recipeInfo" [recipeIndex]="recipeIndex"></app-recipe-info-modal>
 </div>
