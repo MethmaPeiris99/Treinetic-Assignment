@@ -1,13 +1,14 @@
 <div>
-    <section class="bg-[#E6E8E9] min-h-screen">
+    <section class="bg-[#E6E8E9] h-auto">
         <div class="flex flex-col items-center relative">
-            <div class="absolute top-[20%] flex flex-col items-center  z-10">
-                <div class="text-6xl font-primary_font text-center font-semibold tracking-wide text-black px-60">
-                    <h1 class="leading-[5rem]">Embark on a Remarkable Culinary Adventure That Begins Right Here</h1>
+            <div class="absolute top-[10%] sm:top-[20%] flex flex-col items-center z-10">
+                <div
+                    class=" text-white text-4xl px-14 sm:text-5xl md:px-28 lg:text-6xl font-primary_font text-center font-semibold tracking-wide sm:text-black xl:px-60">
+                    <h1 class="leading-[3rem] sm:leading-[4rem] md:leading-[5rem]">Embark on a Remarkable Culinary
+                        Adventure That Begins Right Here</h1>
                 </div>
-                <div class="mt-10">
-                    <div
-                        class="flex items-center bg-black text-white px-8 py-3 rounded-full font-secondary_font font-semibold text-lg hover:scale-105 hover:duration-500 hover:bg-black hover:text-white cursor-pointer"
+                <div class="mt-8">
+                    <div class="bg-gray text-black flex items-center sm:bg-black sm:text-white px-8 py-3 rounded-full font-secondary_font font-semibold text-lg hover:scale-105 hover:duration-500 hover:bg-black hover:text-white cursor-pointer"
                         (click)="openModal()">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6 mr-2">
@@ -17,23 +18,27 @@
                     </div>
                 </div>
             </div>
-            <div class="opacity-40">
-                <img src="https://images.unsplash.com/photo-1497888329096-51c27beff665?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <div class="hidden sm:block opacity-40">
+                <img src="https://images.unsplash.com/photo-1497888329096-51c27beff665?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="w-full max-w-full" />
+            </div>
+            <div class="w-full object-cover sm:hidden sm:opacity-20">
+                <img src="https://images.pexels.com/photos/4099233/pexels-photo-4099233.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    class="w-full object-cover" />
             </div>
         </div>
     </section>
 
-    <section class="min-h-screen px-4 py-2 bg-[#E9EDF0] to-white lg:px-20 lg:py-16 flex flex-col items-center">
-            <h1 class="font-primary_font text-4xl font-semibold text-black text-center underline">Recipes</h1>
-            <div class="grid grid-cols-3 gap-8 mt-6">
-                <div *ngFor="let recipe of recipeList | slice:0:12; let i=index">
-                    <app-recipe-card [recipeInfo]="recipe" [recipeIndex] = "i" ></app-recipe-card>
-                </div>
+    <section class="min-h-screen px-4 py-6 bg-[#E9EDF0] to-white lg:px-20 lg:py-16 flex flex-col items-center">
+        <h1 class="font-primary_font text-4xl font-semibold text-black text-center underline">Recipes</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mt-6">
+            <div *ngFor="let recipe of recipeList | slice:0:12; let i=index">
+                <app-recipe-card [recipeInfo]="recipe" [recipeIndex]="i"></app-recipe-card>
             </div>
+        </div>
     </section>
 
     <div *ngIf="homeService.modalOpen | async">
         <app-add-recipe-modal (newRecipe)="onRecipeAdded($event)"></app-add-recipe-modal>
     </div>
 </div>
-
