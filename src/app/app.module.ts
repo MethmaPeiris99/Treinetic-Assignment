@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CommunityComponent } from './modules/user/components/community/community.component';
 import { AboutComponent } from './modules/user/components/about/about.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { AboutComponent } from './modules/user/components/about/about.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

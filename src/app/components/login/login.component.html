@@ -8,15 +8,17 @@
       >
         Welcome !
       </h1>
-      <form class="flex flex-col gap-6 font-secondary_font tracking-wider">
+      <form class="flex flex-col gap-6 font-secondary_font tracking-wider" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <input
           type="text"
           placeholder="Username"
+          formControlName="username"
           class="rounded-xl border-2 border-gray p-2 mt-8"
         />
         <input
           type="password"
           placeholder="Password"
+          formControlName="password"
           class="rounded-xl border-2 border-gray p-2"
         />
         <button
