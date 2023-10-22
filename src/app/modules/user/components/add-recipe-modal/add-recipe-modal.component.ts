@@ -30,6 +30,7 @@ export class AddRecipeModalComponent {
     };
     console.log(newRecipe);
     this.newRecipe.emit(newRecipe);
+    this.closeModal()
   }
 
   get recipe_name() {
