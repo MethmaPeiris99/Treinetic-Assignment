@@ -1,1 +1,45 @@
-<p>sign-up works!</p>
+<div class="flex items-center justify-center min-h-screen bg-white">
+  <div class="flex max-w-4xl align-middle items-center">
+    <div class="w-[400px] sm:block hidden">
+      <img
+        src="assets/signup-cover.svg"
+        class="rounded-tr-2xl rounded-br-2xl"
+      />
+    </div>
+    <div class="sm:w-1/2 p-10">
+      <h1
+        class="text-5xl font-semibold font-primary_font text-center text-black"
+      >
+        Join the Fam
+      </h1>
+      <form class="flex flex-col gap-6 font-secondary_font tracking-wider">
+        <input
+          type="text"
+          placeholder="First Name"
+          class="rounded-xl border-2 border-gray p-2 mt-8"
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          class="rounded-xl border-2 border-gray p-2"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          class="rounded-xl border-2 border-gray p-2"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          class="rounded-xl border-2 border-gray p-2"
+        />
+        <button
+          class="bg-black text-white rounded-xl py-2 hover:scale-105 hover:duration-300 text-lg"
+          routerLink="/"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
