@@ -3,19 +3,16 @@
     <img src="assets/logo.png" alt="" class="w-full">
   </div>
   <nav class="my-6">
-    <ul class="lg:flex hidden items-center text-sm gap-14 font-secondary_font font-semibold text-black">
+    <ul class="md:flex hidden items-center text-sm gap-14 font-secondary_font font-semibold text-black">
       <a routerLink="./home">
         <li class="hover:scale-110 hover:duration-500">Home</li>
       </a>
       <a routerLink="./about">
         <li class="hover:scale-110 hover:duration-500">About</li>
       </a>
-      <a routerLink="./community">
-        <li class="hover:scale-110 hover:duration-500">Community</li>
-      </a>
     </ul>
   </nav>
-  <div>
+  <div class="hidden md:block">
     <button
       class="border-2 border-[#93B7C5] px-6 py-2 rounded-full font-secondary_font text-black font-semibold hover:bg-[#93B7C5] hover:text-white hover:duration-300"
       (click)="logout()">Logout</button>
