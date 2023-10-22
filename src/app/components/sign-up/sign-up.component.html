@@ -1,42 +1,39 @@
 <div class="flex items-center justify-center min-h-screen bg-white">
   <div class="flex max-w-4xl align-middle items-center">
     <div class="w-[400px] sm:block hidden">
-      <img
-        src="assets/signup-cover.svg"
-        class="rounded-tr-2xl rounded-br-2xl"
-      />
+      <img src="assets/signup-cover.svg" class="rounded-tr-2xl rounded-br-2xl" />
     </div>
     <div class="sm:w-1/2 p-10">
-      <h1
-        class="text-5xl font-semibold font-primary_font text-center text-black"
-      >
+      <h1 class="text-5xl font-semibold font-primary_font text-center text-black">
         Join the Fam
       </h1>
-      <form class="flex flex-col gap-6 font-secondary_font tracking-wider">
-        <input
-          type="text"
-          placeholder="First Name"
-          class="rounded-xl border-2 border-gray p-2 mt-8"
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          class="rounded-xl border-2 border-gray p-2"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          class="rounded-xl border-2 border-gray p-2"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          class="rounded-xl border-2 border-gray p-2"
-        />
-        <button
-          class="bg-black text-white rounded-xl py-2 hover:scale-105 hover:duration-300 text-lg"
-          routerLink="/"
-        >
+      <form class="flex flex-col gap-6 font-secondary_font tracking-wider" [formGroup]="signUpForm">
+        <div>
+          <input type="text" placeholder="First Name" formControlName="firstName"
+            class="rounded-xl border-2 border-gray p-2 mt-8 w-full" />
+          <span *ngIf="firstName && firstName.invalid && firstName.touched"
+            class="text-red-500 font-semibold tracking-normal">First Name Required !</span>
+        </div>
+        <div>
+          <input type="text" placeholder="Last Name" formControlName="lastName"
+            class="rounded-xl border-2 border-gray p-2 w-full" />
+          <span *ngIf="lastName && lastName.invalid && lastName.touched"
+            class="text-red-500 font-semibold tracking-normal mt-0">Last Name Required !</span>
+        </div>
+        <div>
+          <input type="email" placeholder="Email" formControlName="email"
+            class="rounded-xl border-2 border-gray p-2 w-full" />
+          <span *ngIf="email && email.invalid && email.touched"
+            class="text-red-500 font-semibold tracking-normal mt-0">Invalid Email Address !</span>
+        </div>
+        <div>
+          <input type="password" placeholder="Password" formControlName="password"
+            class="rounded-xl border-2 border-gray p-2 w-full" />
+          <span *ngIf="password && password.invalid && password.touched"
+            class="text-red-500 font-semibold tracking-normal mt-0">Invalid Password !</span>
+        </div>
+        <button [disabled]="signUpForm.invalid"
+          class="bg-black text-white rounded-xl py-2 hover:scale-105 hover:duration-300 text-lg" routerLink="/">
           Submit
         </button>
       </form>
